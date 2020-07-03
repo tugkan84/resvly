@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:resvly/common/backgroundGradient.dart';
 import 'package:resvly/pages/BottomNavigaterPage/bottomNavigatorPage.dart';
 import 'package:resvly/pages/ChatPage/chatPage.dart';
+import 'package:resvly/pages/OrderMeal/ordermealPage.dart';
 
 
 class ManageReservationPage extends StatefulWidget {
@@ -266,10 +267,10 @@ class _ManageReservationPageState extends State<ManageReservationPage> {
             ),
           ),
           Expanded(
-            flex: 1,
+            flex: 2,
             child: Center(
               child: Container(
-                width: MediaQuery.of(context).size.width * 0.7,
+                width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(20)),
                 ),
@@ -303,7 +304,7 @@ class _ManageReservationPageState extends State<ManageReservationPage> {
                                 }).show();
                           },
                           child: Text(
-                            "Cancel",
+                            "Cancel Order",
                             style: _textStyle.copyWith(color: Colors.black),
                           ),
                           shape: RoundedRectangleBorder(
@@ -339,7 +340,7 @@ class _ManageReservationPageState extends State<ManageReservationPage> {
                                 }).show();
                           },
                           child: Text(
-                            "Change",
+                            "Change Reservation",
                             style: _textStyle.copyWith(color: Colors.white),
                           ),
                           color: Colors.deepOrange,
@@ -353,7 +354,7 @@ class _ManageReservationPageState extends State<ManageReservationPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Container(
-                          width: MediaQuery.of(context).size.width * 0.7,
+                          width: MediaQuery.of(context).size.width * 0.6,
                           child: FlatButton(
                             onPressed: () {
                               Navigator.push(
@@ -367,6 +368,31 @@ class _ManageReservationPageState extends State<ManageReservationPage> {
                               style: _textStyle.copyWith(color: Colors.white),
                             ),
                             color: Colors.deepOrange,
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(18.0),
+                                side: BorderSide(color: Colors.deepOrange)),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Container(
+                          width: MediaQuery.of(context).size.width * 0.6,
+                          child: FlatButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => OrderMealPage()),
+                              );
+                            },
+                            child: Text(
+                              "Order Your Meals Now",
+                              style: _textStyle.copyWith(color: Colors.deepOrange),
+                            ),
+                            color: Colors.transparent,
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(18.0),
                                 side: BorderSide(color: Colors.red)),

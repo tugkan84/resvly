@@ -21,19 +21,23 @@ class WelcomePage extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Text(
-                      "Welcome to Resvly",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 40,
-                          fontWeight: FontWeight.bold,
-                          shadows: [
-                            Shadow(
-                              color: Colors.black,
-                              blurRadius: 5,
-                              offset: Offset(3, 3),
-                            )
-                          ]),
+                    Container(
+                      margin: EdgeInsets.all(40),
+                      alignment: Alignment.center,
+                      child: Text(
+                        "Welcome to Resvly",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 40,
+                            fontWeight: FontWeight.bold,
+                            shadows: [
+                              Shadow(
+                                color: Colors.black,
+                                blurRadius: 5,
+                                offset: Offset(3, 3),
+                              )
+                            ]),
+                      ),
                     ),
                     SizedBox(
                       height: 10,
@@ -41,10 +45,9 @@ class WelcomePage extends StatelessWidget {
                     Text(
                       "Please select a business category",
                       style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
+                          color: Colors.black,
+                          fontSize: 18,
+                          fontWeight: FontWeight.normal),
                     ),
                   ],
                 ),
@@ -102,39 +105,51 @@ class WelcomePage extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Card(
-                      elevation: 6,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(20))),
-                      child: Container(
-                        width: MediaQuery.of(context).size.width * 0.3,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(20)),
-                          color: Colors.white,
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: <Widget>[
-                            SizedBox(
-                              height: 10,
-                            ),
-                            Image.asset(
-                              "images/barbershop.png",
-                              fit: BoxFit.fitHeight,
-                              height: 60,
-                              width: 60,
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Align(
-                                alignment: Alignment.topCenter,
-                                child: Text(
-                                  "Hair Saloon",
-                                  style: style,
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushAndRemoveUntil(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => MyHomePage(
+                                      title: "Resvly",
+                                    )),
+                            (route) => true);
+                      },
+                      child: Card(
+                        elevation: 6,
+                        shape: RoundedRectangleBorder(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(20))),
+                        child: Container(
+                          width: MediaQuery.of(context).size.width * 0.3,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.all(Radius.circular(20)),
+                            color: Colors.white,
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              SizedBox(
+                                height: 10,
+                              ),
+                              Image.asset(
+                                "images/barbershop.png",
+                                fit: BoxFit.fitHeight,
+                                height: 60,
+                                width: 60,
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Align(
+                                  alignment: Alignment.topCenter,
+                                  child: Text(
+                                    "Hair Saloon",
+                                    style: style,
+                                  ),
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                     ),

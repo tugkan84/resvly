@@ -46,7 +46,8 @@ class ChatPage extends StatelessWidget {
                               margin: EdgeInsets.all(10),
                               child: TextFormField(
                                 textAlign: TextAlign.right,
-                                initialValue: '2',
+                                initialValue: '',
+                                
                                 // style: _textStyle,
                                 decoration: InputDecoration(
                                   enabledBorder: OutlineInputBorder(

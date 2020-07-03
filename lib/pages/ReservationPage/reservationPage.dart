@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:resvly/common/backgroundGradient.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:resvly/pages/BottomNavigaterPage/bottomNavigatorPage.dart';
+import 'package:resvly/pages/OrderMeal/ordermealPage.dart';
 
 class ReservationPage extends StatefulWidget {
   final String selectedRestaurant;
@@ -318,6 +319,17 @@ class _ReservationPageState extends State<ReservationPage> {
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) => MyHomePage(title: "Resvly",)),
+                                  (route) => false);
+                            },
+                            btnCancelText: "Now Order Your Meal",
+                            btnCancelColor: Colors.deepOrange,
+                            btnCancelIcon: Icons.restaurant_menu,
+                            btnCancelOnPress: () {
+                              // debugPrint('OnClcik');
+                              Navigator.pushAndRemoveUntil(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => OrderMealPage()),
                                   (route) => false);
                             },
                             btnOkIcon: Icons.check_circle,

@@ -21,7 +21,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   final TextStyle style = TextStyle(color: Colors.deepOrange);
   int _currentIndex = 0;
-  final List<Widget> _children = [
+  List<Widget> _children = [
     HomePage(),
     BackgroundContainer(
       child: null,
@@ -38,7 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: _children[
-          _currentIndex], // This trailing comma makes auto-formatting nicer for build methods.
+          _currentIndex], 
       bottomNavigationBar: BottomNavigationBar(
         onTap: selectIndex,
         currentIndex:
